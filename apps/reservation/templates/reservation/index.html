@@ -1,0 +1,109 @@
+<html>
+<head>
+	<title>Reservations Page</title>
+
+	{% load static %}
+
+	<!-- CSS Link -->
+	<link rel="stylesheet" type="text/css" href="{% static 'reservation/index.css' %}">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+
+</head>
+<body>
+ 	<div class="wrapper">
+ 		<h1>Lets Create a reservation</h1>
+
+
+ 		<form class="create_res" method="post">
+ 			{% csrf_token %}
+
+ 			<div class="client">
+	 			<h3>About You</h3>
+
+	 			<div class="field-wrap">
+		 			<p>First Name</p>
+		 			<input type="text" name="first_name">
+		 			<p>Last Name</p>
+		 			<input type="text" name="last_name">
+		 			<p>E-mail</p>
+		 			<input type="text" name="email">
+		 			<p>Phone #</p>
+		 			<input type="text" name="phone">
+	 			</div>
+	 			
+	 			<div class="field-wrap">
+	 			<p>Address</p>
+	 			<input type="text" name="address">
+	 			<p>City</p>
+	 			<input type="text" name="city">
+	 			<p>State</p>
+	 			<input type="text" name="state">
+	 			<p>Zip Code</p>
+	 			<input type="text" name="zip">
+	 			</div>
+	 			<br>
+
+	 			<div class="field-wrap">
+	 			<p>Date of Birth</p>
+	 			<input type="text" name="dob">
+	 			<p>Drivers License Number</p>
+	 			<input type="text" name="dl_number">
+	 			<p>Drivers License State</p>
+	 			<input type="text" name="dl_state">
+	 			<p>Drivers License Issue Date</p>
+	 			<input type="text" name="dl_issue">
+	 			<p>Drivers License Exp Date</p>
+	 			<input type="text" name="dl_exp">
+	 			</div>
+
+	 			<div class="field-wrap">
+		 			<h3>Insurance</h3>
+
+		 			<p>Name: </p>
+		 			<input type="text" name="insurance">
+		 			<p>Policy #</p>
+		 			<input type="text" name="policy_num">
+		 			<p>Exp. Date: </p>
+		 			<input type="text" name="ins_exp">
+		 			<br>
+		 			<br>
+		 			<p>Would you like to add Protection?</p>
+				</div>
+			</div>
+ 			<div class="vehicle">
+
+	 			<p>Vehicle needed</p>
+	 			<input type="text">
+
+	 			<p>Pickup Date/Time</p>
+	 			<input type="text">
+
+	 			<p>Pickup Location</p>
+	 			<input type="text">
+
+	 			<p>Dropoff Date/Time</p>
+	 			<input type="text">
+
+	 			<p>Dropoff Location</p>
+	 			<input type="text">
+ 			</div>
+ 			<br>
+ 			<button>Submit</button>
+ 		</form>
+
+
+
+ 	</div>
+</body>
+</html>

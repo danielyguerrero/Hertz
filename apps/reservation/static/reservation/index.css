@@ -1,0 +1,58 @@
+h1{
+	text-align: center;
+}
+.wrapper{
+ padding: 10px;
+ background-color: gray;
+}
+.client{
+	background-color: green;
+	width: auto%;
+	display: inline-block;
+	padding: 24px;
+}
+.vehicle{
+	height: auto;
+	width: auto;
+	background-color: blue;
+	display: inline-block;
+	vertical-align: top;
+	padding: 50px;
+}
+.field-wrap{
+	display: inline-block;
+	vertical-align: top;
+	border: 2px solid black;
+	padding: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

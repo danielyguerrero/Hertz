@@ -1,0 +1,46 @@
+.wrapper{
+	background: url("images/hertz.jpg") no-repeat;
+	background-size: cover;                      
+    background-position: center center;       
+	height: 100%;
+	width: auto;
+	text-align: center;
+}
+.header{
+	color: white;
+	font-style: italic;
+}
+
+.regform{
+	height: auto;
+	width: 400px;
+	background-color: #fff30099;
+	display: inline-block;
+	opacity: 0.8;
+	text-align: center;
+	border-radius: 29px;
+}
+
+.regform p{
+	margin: 5px;
+	font-size: 20px;
+}
+.login{
+	color: red;
+	font-size: 18px;
+}
+.logform{
+	height: auto;
+	width: 400px;
+	background-color: #fff30099;
+	display: inline-block;
+	vertical-align: top;
+	opacity: 0.8;
+	text-align: center;
+	border-radius: 29px;
+}
+
+.logform p{
+	margin: 5px;
+	font-size: 20px;
+}
