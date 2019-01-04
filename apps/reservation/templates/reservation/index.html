@@ -21,11 +21,27 @@
 
 </head>
 <body>
+
+	<div class="topnav" id="myTopnav">
+
+		Welcome, {{ user.first_name }}!
+
+		<a href="{% url 'dashboard' %}">About You </a>
+
+		<a href="{% url 'vehicle' %}"><span class="glyphicon"></span> Vehicle </a>
+
+		<a href="{% url 'location' %}"><span class="glyphicon"></span> Location </a>
+
+		<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
+
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+
+	</div>
  	<div class="wrapper">
  		<h1>Lets Create a reservation</h1>
 
 
- 		<form class="create_res" method="post">
+ 		<form class="add_client" method="post">
  			{% csrf_token %}
 
  			<div class="client">
@@ -81,42 +97,8 @@
 		 			<p>Would you like to add Our Protection?</p>
 				</div>
 			</div>
- 			<div class="vehicle">
-
-	 			<p>Vehicle needed</p>
-	 			
-				<select name="vehicle" >
-					<option value="compact">Compact Sedan</option>
-					<option value="midsize">Midsize Sedan</option>
-					<option value="fullsize">Full-size Sedan</option>
-					<option value="suv">SUV</option>
-				</select> 
-
-	 			<p>Pickup Date/Time</p>
-	 			<input type="date">
-
-	 			<p>Pickup Location</p>
-	 			<select name="location" >
-					<option value="dallas">Dallas</option>
-					<option value="plano">Plano</option>
-					<option value="garland">Garland</option>
-					<option value="richardson">Richardson</option>
-				</select> 
-
-	 			<p>Dropoff Date/Time</p>
-	 			<input type="date">
-
-	 			<p>Dropoff Location</p>
-	 			<select name="location" >
-					<option value="dallas">Dallas</option>
-					<option value="plano">Plano</option>
-					<option value="garland">Garland</option>
-					<option value="richardson">Richardson</option>
-				</select> 
-
- 			</div>
  			<br>
- 			<button>Get Quote</button>
+ 			<button type="submit">Continue</button>
  		</form>
 
 
