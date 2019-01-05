@@ -5,7 +5,7 @@
 	{% load static %}
 
 	<!-- CSS Link -->
-	<link rel="stylesheet" type="text/css" href="{% static 'reservation/index.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'reservation/css/index.css' %}">
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -30,62 +30,58 @@
 
 		<a href="{% url 'vehicle' %}"><span class="glyphicon"></span> Vehicle </a>
 
-		<a href="{% url 'location' %}"><span class="glyphicon"></span> Location </a>
 
 		<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
 
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 
 	</div>
- 	<div class="wrapper">
- 		<h1>Lets Create a reservation</h1>
+	<div class="wrapper">
+		<h2>Let's Create a Reservation</h2>
+		<form class="add_res" method="post">
+	 		{% csrf_token %}
 
+			<div class="top">
+				<h4>About You</h4>
+				<div class="field-wrap">
+			 			<p>First Name</p>
+			 			<input type="text" name="first_name">
+			 			<p>Last Name</p>
+			 			<input type="text" name="last_name">
+			 			<p>E-mail</p>
+			 			<input type="text" name="email">
+			 			<p>Phone #</p>
+			 			<input type="text" name="phone">
+		 		</div>
+		 		<div class="field-wrap">
+		 			<p>Address</p>
+		 			<input type="text" name="address">
+		 			<p>City</p>
+		 			<input type="text" name="city">
+		 			<p>State</p>
+		 			<input type="text" name="state">
+		 			<p>Zip Code</p>
+		 			<input type="text" name="zip">
+		 		</div>
+			</div>
 
- 		<form class="add_client" method="post">
- 			{% csrf_token %}
-
- 			<div class="client">
-	 			<h3>About You</h3>
-
-	 			<div class="field-wrap">
-		 			<p>First Name</p>
-		 			<input type="text" name="first_name">
-		 			<p>Last Name</p>
-		 			<input type="text" name="last_name">
-		 			<p>E-mail</p>
-		 			<input type="text" name="email">
-		 			<p>Phone #</p>
-		 			<input type="text" name="phone">
-	 			</div>
-	 			
-	 			<div class="field-wrap">
-	 			<p>Address</p>
-	 			<input type="text" name="address">
-	 			<p>City</p>
-	 			<input type="text" name="city">
-	 			<p>State</p>
-	 			<input type="text" name="state">
-	 			<p>Zip Code</p>
-	 			<input type="text" name="zip">
-	 			</div>
-	 			<br>
-
-	 			<div class="field-wrap">
-	 			<p>Date of Birth</p>
-	 			<input type="date" name="dob">
-	 			<p>Drivers License Number</p>
-	 			<input type="text" name="dl_number">
-	 			<p>Drivers License State</p>
-	 			<input type="text" name="dl_state">
-	 			<p>Drivers License Issue Date</p>
-	 			<input type="date" name="dl_issue">
-	 			<p>Drivers License Exp Date</p>
-	 			<input type="date" name="dl_exp">
-	 			</div>
-
-	 			<div class="field-wrap">
+			<div class="mid">
+				<h4>Your Driver's Information</h4>
+				<div class="field-wrap">
+		 			<p>Date of Birth</p>
+		 			<input type="date" name="dob">
+		 			<p>Drivers License Number</p>
+		 			<input type="text" name="dl_number">
+		 			<p>Drivers License State</p>
+		 			<input type="text" name="dl_state">
+		 			<p>Drivers License Issue Date</p>
+		 			<input type="date" name="dl_issue">
+		 			<p>Drivers License Exp Date</p>
+		 			<input type="date" name="dl_exp">
+		 		</div>
+		 			
+				<div class="field-wrap">
 		 			<h3>Insurance</h3>
-
 		 			<p>Name: </p>
 		 			<input type="text" name="insurance">
 		 			<p>Policy #</p>
@@ -97,12 +93,23 @@
 		 			<p>Would you like to add Our Protection?</p>
 				</div>
 			</div>
- 			<br>
- 			<button type="submit">Continue</button>
- 		</form>
+			<div class="low">
+				<h4>Which Vehicle? Where? How Long?</h4>
+				<div class="field-wrap">
+					<p>Pickup Location: </p>
+					<input type="text" name="pu_location">
+					<p>Pickup date:</p>
+					<input type="date" name="pu_date">
+					<p>Dropoff Location: </p>
+					<input type="text" name="do_location">
+					<p>Dropoff date:</p>
+					<input type="date" name="do_date">
+				</div>
 
+			</div>
+			<button>Make Reservation</button>
+		</form>
+	</div>
 
-
- 	</div>
 </body>
 </html>

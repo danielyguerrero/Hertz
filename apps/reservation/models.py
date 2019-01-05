@@ -6,7 +6,9 @@ from django.db import models
 # Create your models here.
 
 class ReservationManager(models.Manager):
-	def validate(self, form_data):
+	
+	def validate(self, form_data, user_id):
+		user = User.objects.get(id=user_id)
 		errors = []
 		pu_location = form_data['pu_location']
 		do_location = form_data['do_location']
@@ -25,6 +27,15 @@ class ReservationManager(models.Manager):
 			errors.append('Phone number is required.')
 
 		return errors	
+
+	def add_res(self, form_data, user_id):
+		user = User.objects.get(id=user_id)
+		reservation = self.create(
+			pu_location = form_data['pu_location'],
+			do_location = form_data['do_location'],
+			vehicle = form_data['vehicle']
+
+			)
 
 
 
