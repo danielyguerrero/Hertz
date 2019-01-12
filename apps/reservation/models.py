@@ -38,13 +38,11 @@ class ReservationManager(models.Manager):
 			)
 
 
-
-
-
 class Reservation(models.Model):
 	vehicle = models.CharField(max_length=45)
 	pu_location = models.CharField(max_length=45)
 	do_location = models.CharField(max_length=45)
+	added_by = models.ForeignKey(User, related_name="added_res")
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
 
