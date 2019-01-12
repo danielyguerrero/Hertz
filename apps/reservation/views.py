@@ -43,9 +43,20 @@ def index(request):
 	return render(request, 'reservation/index.html', context)
 
 
-def vehicle(request):
-	return render(request, 'reservation/vehicle')
+def add(request):
+	if 'user_id' not in request.session:
 
+	# RETURN REDIRECT TO THE INDEX.HTML IF USER_ID NOT IN SESSION
+	    return redirect('/')
+
+	#ELSE SET VARIABLE "USER" TO EQUAL CURRENT_USER // FROM CURRENT_USER HELPER METHOD ABOVE
+	user = current_user(request)
+
+	#PASS VARIABLES THROUGH CONTEXT
+	context = {
+		'user': user,
+	}
+	return render(request, 'reservation/add.html', context)
 
 # =================================================
 #                       PROCESS

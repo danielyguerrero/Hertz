@@ -1,0 +1,43 @@
+.wrapper{
+height: auto;
+width: auto;
+padding: 10px;
+margin-right: auto;
+margin-left: auto;
+background-color: #beb2fb;
+}
+
+.top{
+  height: auto;
+  width: 100%;
+  background-color:blue;
+}
+.mid{
+  height: auto;
+  width: 100%;
+  background-color:yellow;
+}
+.low{
+  height: auto;
+  width: 100%;
+  background-color:green;
+
+}
+
+.field-wrap{
+  display: inline-block;
+  border: 2px solid black;
+  padding: 30px;
+  height: auto;
+  width: 24%;
+  vertical-align: top;
+  margin:30px;
+}
+.quote{
+	min-height: 300px;
+	min-width: 400px;
+	display: inline-block;
+	vertical-align: top;
+	border: 2px solid black;
+	padding: 10px;
+}

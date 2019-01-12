@@ -26,10 +26,9 @@
 
 		Welcome, {{ user.first_name }}!
 
-		<a href="{% url 'dashboard' %}">About You </a>
-
-		<a href="{% url 'vehicle' %}"><span class="glyphicon"></span> Vehicle </a>
-
+		<a href="{% url 'dashboard' %}"> Dashboard </a>
+		
+		<a href="{% url 'add' %}"> Add Reservation </a>
 
 		<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
 
@@ -37,78 +36,16 @@
 
 	</div>
 	<div class="wrapper">
-		<h2>Let's Create a Reservation</h2>
-		<form class="add_res" method="post">
-	 		{% csrf_token %}
+		<h1>Welome, {{user.first_name}} {{user.email}}</h1>
+		<p>These are your current Reservations: </p>
 
-			<div class="top">
-				<h4>About You</h4>
-				<div class="field-wrap">
-			 			<p>First Name</p>
-			 			<input type="text" name="first_name">
-			 			<p>Last Name</p>
-			 			<input type="text" name="last_name">
-			 			<p>E-mail</p>
-			 			<input type="text" name="email">
-			 			<p>Phone #</p>
-			 			<input type="text" name="phone">
-		 		</div>
-		 		<div class="field-wrap">
-		 			<p>Address</p>
-		 			<input type="text" name="address">
-		 			<p>City</p>
-		 			<input type="text" name="city">
-		 			<p>State</p>
-		 			<input type="text" name="state">
-		 			<p>Zip Code</p>
-		 			<input type="text" name="zip">
-		 		</div>
-			</div>
 
-			<div class="mid">
-				<h4>Your Driver's Information</h4>
-				<div class="field-wrap">
-		 			<p>Date of Birth</p>
-		 			<input type="date" name="dob">
-		 			<p>Drivers License Number</p>
-		 			<input type="text" name="dl_number">
-		 			<p>Drivers License State</p>
-		 			<input type="text" name="dl_state">
-		 			<p>Drivers License Issue Date</p>
-		 			<input type="date" name="dl_issue">
-		 			<p>Drivers License Exp Date</p>
-		 			<input type="date" name="dl_exp">
-		 		</div>
-		 			
-				<div class="field-wrap">
-		 			<h3>Insurance</h3>
-		 			<p>Name: </p>
-		 			<input type="text" name="insurance">
-		 			<p>Policy #</p>
-		 			<input type="text" name="policy_num">
-		 			<p>Exp. Date: </p>
-		 			<input type="date" name="ins_exp">
-		 			<br>
-		 			<br>
-		 			<p>Would you like to add Our Protection?</p>
-				</div>
-			</div>
-			<div class="low">
-				<h4>Which Vehicle? Where? How Long?</h4>
-				<div class="field-wrap">
-					<p>Pickup Location: </p>
-					<input type="text" name="pu_location">
-					<p>Pickup date:</p>
-					<input type="date" name="pu_date">
-					<p>Dropoff Location: </p>
-					<input type="text" name="do_location">
-					<p>Dropoff date:</p>
-					<input type="date" name="do_date">
-				</div>
+		<p>These are your previous </p>
 
-			</div>
-			<button>Book This Reservation</button>
-		</form>
+
+
+
+
 	</div>
 
 </body>
