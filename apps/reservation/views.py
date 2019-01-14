@@ -29,6 +29,8 @@ def user(request, id):
 # ==============================================================
 
 def index(request):
+
+	print "in the index.html"
 	#CHECK IS THERE IS A USER_ID IN SESSION
 	if 'user_id' not in request.session:
 
@@ -38,11 +40,18 @@ def index(request):
 	#ELSE SET VARIABLE "USER" TO EQUAL CURRENT_USER // FROM CURRENT_USER HELPER METHOD ABOVE
 	user = current_user(request)
 
+	today = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+	today_res = Reservation.objects.filter(pu_time = today)
+
+	future_res = Reservation.objects.exclude(pu_time = today)
+
 	#PASS VARIABLES THROUGH CONTEXT
 	context = {
 		'user': user,
-		# 'joined_trips': user.joined.all(),
-		# 'other_trips': Trip.objects.exclude(joined_by = user)
+		'today': today,
+		'today_res': today_res,
+		'future_res': future_res,
 	}
 	return render(request, 'reservation/index.html', context)
 

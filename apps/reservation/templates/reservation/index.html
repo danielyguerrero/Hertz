@@ -37,12 +37,33 @@
 	</div>
 	<div class="wrapper">
 		<h1>Welome, {{user.first_name}} {{user.email}}</h1>
-		<p>These are your current Reservations: </p>
+		<p>Today's Reservations: </p>
+
+		{{ today }}
 
 
 		<p>These are your previous </p>
 
-
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+				<th scope="col">Tasks</th>
+				<th scope="col">Time</th>
+				<th scope="col">Status</th>
+				<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for res in future_res %}
+					<tr>
+					<td>{{ res.pu_location }}</td>
+					<td>{{ res.do_location }}</td>
+					
+					<td> <a href="{{appoint.id}}">Edit</a> / <a href="delete/{{appoint.id}}">Delete</a> </td>
+					</tr>
+				{%endfor%}
+			</tbody>
+		</table>
 
 
 
