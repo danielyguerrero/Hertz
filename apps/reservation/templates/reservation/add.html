@@ -34,7 +34,7 @@
 		<h2>Let's Create a Reservation</h2>
 		<form class="add_res" method="post">
 	 		{% csrf_token %}
-
+<!-- 
 			<div class="top">
 				<h4>About You</h4>
 				<div class="field-wrap">
@@ -86,10 +86,11 @@
 		 			<br>
 		 			<p>Would you like to add Our Protection?</p>
 				</div>
-			</div>
+			</div> -->
 			<div class="low">
 				<h4>Which Vehicle? Where? How Long?</h4>
 				<div class="field-wrap">
+
 					<p>Select Vehicle: </p>
 					<select name="vehicle">
 						<option value="volvo">Compact</option>
@@ -101,6 +102,7 @@
 						<option value="volvo">Passander Van</option>
 						<option value="saab">Pickup Truck</option>
 					</select>
+
 					<p>Pickup Location: </p>
 					<select name="pu_location">
 						<option value="Dallas">Dallas</option>
@@ -112,10 +114,12 @@
 						<option value="DfwAirport" selected>DFW Airport</option>
 						<option value="LoveFieldAirport">LoveField Airport</option>
 					</select>
+
 					<p>Pickup date:</p>
-					<input type="date" onload="getDate()" name="pu_date">
+					<input type="date" name="pu_time">
+
 					<p>Dropoff Location: </p>
-					<select name="pu_location">
+					<select name="do_location">
 						<option value="Dallas">Dallas</option>
 						<option value="Mesquite">Mesquite</option>
 						<option value="Richardson">Richardson</option>
@@ -125,9 +129,11 @@
 						<option value="DfwAirport" selected>DFW Airport</option>
 						<option value="LoveFieldAirport">LoveField Airport</option>
 					</select>
+
 					<p>Dropoff date:</p>
-					<input type="date" name="do_date">
+					<input type="date" name="do_time">
 				</div>
+				
 				<div class="quote">
 					<p>The estimate price for this reservation is: </p>
 					<img src="/static/reservation/img/cartypes.jpg">

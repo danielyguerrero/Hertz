@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from ..login.models import User
 from .models import Reservation 
+import datetime
+from datetime import date
 
 
 
@@ -22,9 +24,9 @@ def user(request, id):
 	}
 	return render(request, 'reservation/index.html')
 
-# ===================================================
+# ==============================================================
 # 						RENDER
-# ===================================================
+# ==============================================================
 
 def index(request):
 	#CHECK IS THERE IS A USER_ID IN SESSION
@@ -39,24 +41,10 @@ def index(request):
 	#PASS VARIABLES THROUGH CONTEXT
 	context = {
 		'user': user,
+		# 'joined_trips': user.joined.all(),
+		# 'other_trips': Trip.objects.exclude(joined_by = user)
 	}
 	return render(request, 'reservation/index.html', context)
-
-
-def add(request):
-	if 'user_id' not in request.session:
-
-	# RETURN REDIRECT TO THE INDEX.HTML IF USER_ID NOT IN SESSION
-	    return redirect('/')
-
-	#ELSE SET VARIABLE "USER" TO EQUAL CURRENT_USER // FROM CURRENT_USER HELPER METHOD ABOVE
-	user = current_user(request)
-
-	#PASS VARIABLES THROUGH CONTEXT
-	context = {
-		'user': user,
-	}
-	return render(request, 'reservation/add.html', context)
 
 # =================================================
 #                       PROCESS
@@ -66,20 +54,18 @@ def add(request):
 def add_res(request):
 	if request.method == "POST":
 		errors = Reservation.objects.validate(request.POST)
-
+		user = current_user(request)
+		pu_time = datetime.datetime.now()
+		do_time = datetime.datetime.now()
 		if not errors:
+			context = {
+			'pu_time': pu_time,
+			'do_time': do_time
+			}
 			reservation = Reservation.objects.add_res(request.POST, request.session["user_id"])
-			print trip
 			return redirect(reverse('dashboard'))
 
 		flash_errors(request, errors)
 		return redirect(reverse('add_res'))
 	else:
-		return render(request, 'reservation/index.html')
-
-
-
-
-
-
-
+		return render(request, 'reservation/add.html')
