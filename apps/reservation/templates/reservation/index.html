@@ -47,19 +47,23 @@
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
-				<th scope="col">Tasks</th>
-				<th scope="col">Time</th>
-				<th scope="col">Status</th>
-				<th scope="col">Action</th>
+				<th scope="col">Pickup Location</th>
+				<th scope="col">Vehicle Class</th>
+				<th scope="col">Pickup Time</th>
+				<th scope="col">Dropoff Location</th>
+				<th scope="col">Dropoff Time</th>
+				<th scope="col"> Action </th>
 				</tr>
 			</thead>
 			<tbody>
 				{% for res in future_res %}
 					<tr>
 					<td>{{ res.pu_location }}</td>
+					<td>{{ res.vehicle }}</td>
+					<td>{{ res.pu_time }}</td>
 					<td>{{ res.do_location }}</td>
-					
-					<td> <a href="{{appoint.id}}">Edit</a> / <a href="delete/{{appoint.id}}">Delete</a> </td>
+					<td>{{ res.do_time }}</td>
+					<td> <a href="{{res.id}}">Edit</a> / <a href="delete/{{res.id}}">Delete</a> </td>
 					</tr>
 				{%endfor%}
 			</tbody>

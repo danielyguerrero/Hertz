@@ -78,3 +78,11 @@ def add_res(request):
 		return redirect(reverse('add_res'))
 	else:
 		return render(request, 'reservation/add.html')
+
+
+
+def delete(request, res_id):
+
+    Reservation.objects.get(id=res_id).delete()
+
+    return redirect('dashboard')
