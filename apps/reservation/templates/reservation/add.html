@@ -5,92 +5,38 @@
 		{% load staticfiles %}
 		<!-- Bootstrap -->
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+		<!-- Icon library -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<!-- Icon library -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-		<!-- Latest compiled JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<!-- CSS Link -->
 		<link rel="stylesheet" href="{% static 'reservation/css/add.css' %}" charset="utf-8"  />
+		<!-- jQuery Link -->
+		<script src="{% static "reservation/js/add.js" %}"></script>
 
 </head>
 <body>
-
 	<div class="topnav" id="myTopnav">
-
-		Welcome, {{ user.first_name }}!
+		 <a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
 
 		<a href="{% url 'dashboard' %}"> Dashboard </a>
-
+		
+		<a href="{% url 'add_res' %}"> Add Reservation </a>
 
 		<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
 
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 
 	</div>
-	<div class="wrapper">
+	<div class="wrapper">		
 		<h2>Let's Create a Reservation</h2>
 		<form class="add_res" method="post">
 	 		{% csrf_token %}
-<!-- 
-			<div class="top">
-				<h4>About You</h4>
-				<div class="field-wrap">
-			 			<p>First Name</p>
-			 			<input type="text" name="first_name">
-			 			<p>Last Name</p>
-			 			<input type="text" name="last_name">
-			 			<p>E-mail</p>
-			 			<input type="text" name="email">
-			 			<p>Phone #</p>
-			 			<input type="text" name="phone">
-		 		</div>
-		 		<div class="field-wrap">
-		 			<p>Address</p>
-		 			<input type="text" name="address">
-		 			<p>City</p>
-		 			<input type="text" name="city">
-		 			<p>State</p>
-		 			<input type="text" name="state">
-		 			<p>Zip Code</p>
-		 			<input type="text" name="zip">
-		 		</div>
-			</div>
-
-			<div class="mid">
-				<h4>Your Driver's Information</h4>
-				<div class="field-wrap">
-		 			<p>Date of Birth</p>
-		 			<input type="date" name="dob">
-		 			<p>Drivers License Number</p>
-		 			<input type="text" name="dl_number">
-		 			<p>Drivers License State</p>
-		 			<input type="text" name="dl_state">
-		 			<p>Drivers License Issue Date</p>
-		 			<input type="date" name="dl_issue">
-		 			<p>Drivers License Exp Date</p>
-		 			<input type="date" name="dl_exp">
-		 		</div>
-		 			
-				<div class="field-wrap">
-		 			<h3>Insurance</h3>
-		 			<p>Name: </p>
-		 			<input type="text" name="insurance">
-		 			<p>Policy #</p>
-		 			<input type="text" name="policy_num">
-		 			<p>Exp. Date: </p>
-		 			<input type="date" name="ins_exp">
-		 			<br>
-		 			<br>
-		 			<p>Would you like to add Our Protection?</p>
-				</div>
-			</div> -->
 			<div class="low">
 				<h4>Which Vehicle? Where? How Long?</h4>
 				<div class="field-wrap">
-
 					<p>Select Vehicle: </p>
 					<select name="vehicle">
 						<option value="Compact">Compact</option>
@@ -111,8 +57,8 @@
 						<option value="Garland" selected>Garland</option>
 						<option value="Irving">Irving</option>
 						<option value="Plano">Plano</option>
-						<option value="DfwAirport" selected>DFW Airport</option>
-						<option value="LoveFieldAirport">LoveField Airport</option>
+						<option value="DFW Airport" selected>DFW Airport</option>
+						<option value="Love-Field Airport">LoveField Airport</option>
 					</select>
 
 					<p>Pickup date:</p>
@@ -126,8 +72,8 @@
 						<option value="Garland" selected>Garland</option>
 						<option value="Irving">Irving</option>
 						<option value="Plano">Plano</option>
-						<option value="DfwAirport" selected>DFW Airport</option>
-						<option value="LoveFieldAirport">LoveField Airport</option>
+						<option value="DFW Airport" selected>DFW Airport</option>
+						<option value="Love-Field Airport">Love-Field Airport</option>
 					</select>
 
 					<p>Dropoff date:</p>
@@ -142,7 +88,9 @@
 			</div>
 			<button>Book This Reservation</button>
 		</form>
+		<p>this is a p</p>
+		<p>this is a p</p>
+		<p>this is a p</p>
 	</div>
-
 </body>
 </html>

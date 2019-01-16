@@ -1,15 +1,35 @@
-body html{
+body {
 text-align: center;
-background-color: #cbcbcb;
+background-color: #d1b484;
 }
-h1 h3{
+h1 {
 margin:0;
 }
-h4{
-font-size: 30px;
+.wrapper{
+height: auto;
+width: auto;
+padding-top: 20px;
+max-width: 800px;
+margin-right: auto;
+margin-left: auto;
+background-color: white;
 }
-/*=======================================================================================*/
-/* ================================         NAVBAR         ==============================*/
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+}
+.reslist{
+border: solid 2px;
+}
 /*=======================================================================================*/
 /* Add a black background color to the top navigation */
 .topnav {
@@ -67,8 +87,6 @@ text-align: left;
 height: auto;
 width: auto;
 padding: 10px;
-margin-right: auto;
-margin-left: auto;
 background-color: #beb2fb;
 }
 

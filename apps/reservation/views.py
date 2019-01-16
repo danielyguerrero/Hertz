@@ -4,7 +4,6 @@ from django.contrib import messages
 from ..login.models import User
 from .models import Reservation 
 import datetime
-from datetime import date
 
 
 
@@ -40,11 +39,11 @@ def index(request):
 	#ELSE SET VARIABLE "USER" TO EQUAL CURRENT_USER // FROM CURRENT_USER HELPER METHOD ABOVE
 	user = current_user(request)
 
-	today = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+	today = datetime.datetime.now().strftime('%Y-%m-%d')
 
-	today_res = Reservation.objects.filter(pu_time = today)
+	today_res = Reservation.objects.filter(pu_time = today).filter(made_by = user)
 
-	future_res = Reservation.objects.exclude(pu_time = today)
+	future_res = Reservation.objects.exclude(pu_time = today).filter(made_by = user)
 
 	#PASS VARIABLES THROUGH CONTEXT
 	context = {

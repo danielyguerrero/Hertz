@@ -7,23 +7,6 @@ margin-left: auto;
 background-color: #beb2fb;
 }
 
-.top{
-  height: auto;
-  width: 100%;
-  background-color:blue;
-}
-.mid{
-  height: auto;
-  width: 100%;
-  background-color:yellow;
-}
-.low{
-  height: auto;
-  width: 100%;
-  background-color:green;
-
-}
-
 .field-wrap{
   display: inline-block;
   border: 2px solid black;
