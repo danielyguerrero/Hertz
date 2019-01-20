@@ -41,15 +41,13 @@ def index(request):
 
 	today = datetime.datetime.now().strftime('%Y-%m-%d')
 
-	today_res = Reservation.objects.filter(pu_time = today).filter(made_by = user)
 
-	future_res = Reservation.objects.exclude(pu_time = today).filter(made_by = user)
+	future_res = Reservation.objects.exclude(pu_date = today).filter(made_by = user)
 
 	#PASS VARIABLES THROUGH CONTEXT
 	context = {
 		'user': user,
 		'today': today,
-		'today_res': today_res,
 		'future_res': future_res,
 	}
 	return render(request, 'reservation/index.html', context)
@@ -63,15 +61,20 @@ def add_res(request):
 	if request.method == "POST":
 		errors = Reservation.objects.validate(request.POST)
 		user = current_user(request)
+		pu_date = datetime.date.now()
 		pu_time = datetime.datetime.now()
+		do_date = datetime.date.now()
 		do_time = datetime.datetime.now()
 
 
 
 		if not errors:
 			context = {
+			'pu_date': pu_date,
 			'pu_time': pu_time,
-			'do_time': do_time
+			'do_date': do_date,
+			'do_time': do_time,
+
 			}
 			reservation = Reservation.objects.add_res(request.POST, request.session["user_id"])
 			return redirect(reverse('dashboard'))

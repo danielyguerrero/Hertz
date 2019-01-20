@@ -41,9 +41,9 @@
 					<tr>
 					<th scope="col">Pickup Location</th>
 					<th scope="col">Vehicle Class</th>
-					<th scope="col">Pickup Time</th>
+					<th scope="col">Pickup Date</th>
 					<th scope="col">Dropoff Location</th>
-					<th scope="col">Dropoff Time</th>
+					<th scope="col">Dropoff Date</th>
 					<th scope="col">Amount Per Day</th>
 					<th scope="col"> Action </th>
 					</tr>
@@ -53,9 +53,9 @@
 						<tr>
 						<td>{{ res.pu_location }}</td>
 						<td>{{ res.vehicle }}</td>
-						<td>{{ res.pu_time }}</td>
+						<td>{{ res.pu_date|date:"M d, Y" }} @ {{res.pu_time}}</td>
 						<td>{{ res.do_location }}</td>
-						<td>{{ res.do_time }}</td>
+						<td>{{ res.do_date|date:"M d, Y" }} @ {{res.do_time}}</td>
 						<td>${{ res.rate }}.00</td>
 						<td> <a href="{{res.id}}">Edit</a> / <a href="delete/{{res.id}}">Delete</a> </td>
 						</tr>

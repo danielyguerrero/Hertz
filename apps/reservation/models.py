@@ -41,8 +41,10 @@ class ReservationManager(models.Manager):
 		reservation = self.create(
 		vehicle = form_data['vehicle'],
 		pu_location = form_data['pu_location'],
+		pu_date = form_data['pu_date'],
 		pu_time = form_data['pu_time'],
 		do_location = form_data['do_location'],
+		do_date = form_data['do_date'],
 		do_time = form_data['do_time'],
 		rate = rate,
 		made_by = user
@@ -53,9 +55,11 @@ class ReservationManager(models.Manager):
 class Reservation(models.Model):
 	vehicle = models.CharField(max_length=45)
 	pu_location = models.CharField(max_length=45)
-	pu_time = models.DateTimeField(null=True)
+	pu_date = models.DateField(null=True)
+	pu_time = models.TimeField(null=True)
 	do_location = models.CharField(max_length=45)
-	do_time = models.DateTimeField(null=True)
+	do_date = models.DateField(null=True)
+	do_time = models.TimeField(null=True)
 	rate = models.IntegerField(default=0)
 	made_by = models.ForeignKey(User, related_name="made_by")
 	created_at = models.DateTimeField(auto_now_add=True)

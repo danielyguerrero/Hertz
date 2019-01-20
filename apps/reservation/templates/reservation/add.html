@@ -1,6 +1,7 @@
 <html>
 <head>
 		<title>Add a Reservation</title>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{% load staticfiles %}
 		<!-- Bootstrap -->
@@ -35,7 +36,6 @@
 		<form class="add_res" method="post">
 	 		{% csrf_token %}
 			<div class="low">
-				<h4>Which Vehicle? Where? How Long?</h4>
 				<div class="field-wrap">
 					<p>Select Vehicle: </p>
 					<select name="vehicle">
@@ -61,8 +61,33 @@
 						<option value="Love-Field Airport">LoveField Airport</option>
 					</select>
 
-					<p>Pickup date:</p>
-					<input type="date" name="pu_time">
+					<p>Pickup Date and Time:</p>
+					<input type="date" name="pu_date">
+
+					<select type="time" name="pu_time">
+						<option value="07:30">07:30 AM</option>
+						<option value="08:00">08:00 AM</option>
+						<option value="08:30">08:30 AM</option>
+						<option value="09:00">09:00 AM</option>
+						<option value="09:30">09:30 AM</option>
+						<option value="10:00">10:00 AM</option>
+						<option value="10:30">10:30 AM</option>
+						<option value="11:00">11:00 AM</option>
+						<option value="11:30">11:30 AM</option>
+						<option value="12:00">12:00 Noon</option>
+						<option value="12:30">12:30 PM</option>
+						<option value="13:00">01:00 PM</option>
+						<option value="13:30">01:30 PM</option>
+						<option value="14:00">02:00 PM</option>
+						<option value="14:30">02:30 PM</option>
+						<option value="15:00">03:00 PM</option>
+						<option value="15:30">03:30 PM</option>
+						<option value="16:00">04:00 PM</option>
+						<option value="16:30">04:30 PM</option>
+						<option value="17:00">05:00 PM</option>
+						<option value="17:30">05:30 PM</option>
+						<option value="18:00">06:00 PM</option>
+					</select>
 
 					<p>Dropoff Location: </p>
 					<select name="do_location">
@@ -76,8 +101,32 @@
 						<option value="Love-Field Airport">Love-Field Airport</option>
 					</select>
 
-					<p>Dropoff date:</p>
-					<input type="date" name="do_time">
+					<p>Dropoff Date and Time:</p>
+					<input type="date" name="do_date">
+					<select type="time" name="do_time">
+						<option value="07:30">07:30 AM</option>
+						<option value="08:00">08:00 AM</option>
+						<option value="08:30">08:30 AM</option>
+						<option value="09:00">09:00 AM</option>
+						<option value="09:30">09:30 AM</option>
+						<option value="10:00">10:00 AM</option>
+						<option value="10:30">10:30 AM</option>
+						<option value="11:00">11:00 AM</option>
+						<option value="11:30">11:30 AM</option>
+						<option value="12:00">12:00 Noon</option>
+						<option value="12:30">12:30 PM</option>
+						<option value="13:00">01:00 PM</option>
+						<option value="13:30">01:30 PM</option>
+						<option value="14:00">02:00 PM</option>
+						<option value="14:30">02:30 PM</option>
+						<option value="15:00">03:00 PM</option>
+						<option value="15:30">03:30 PM</option>
+						<option value="16:00">04:00 PM</option>
+						<option value="16:30">04:30 PM</option>
+						<option value="17:00">05:00 PM</option>
+						<option value="17:30">05:30 PM</option>
+						<option value="18:00">06:00 PM</option>
+					</select>
 				</div>
 				
 				<div class="quote">
@@ -94,3 +143,4 @@
 	</div>
 </body>
 </html>
+
