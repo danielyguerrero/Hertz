@@ -21,7 +21,7 @@ def user(request, id):
 	context={
 		'user': current_user(request),
 	}
-	return render(request, 'reservation/index.html')
+	return render(request, 'rental/index.html')
 
 # ==============================================================
 # 						RENDER
@@ -39,7 +39,7 @@ def index(request):
 	#ELSE SET VARIABLE "USER" TO EQUAL CURRENT_USER // FROM CURRENT_USER HELPER METHOD ABOVE
 	user = current_user(request)
 
-	today = datetime.datetime.now().strftime('%Y-%m-%d')
+	today = datetime.datetime.now()
 
 
 	future_res = Reservation.objects.exclude(pu_date = today).filter(made_by = user)
@@ -50,20 +50,18 @@ def index(request):
 		'today': today,
 		'future_res': future_res,
 	}
-	return render(request, 'reservation/index.html', context)
+	return render(request, 'rental/index.html', context)
 
 # =================================================
 #                       PROCESS
 # =================================================
-
-
 def add_res(request):
 	if request.method == "POST":
 		errors = Reservation.objects.validate(request.POST)
 		user = current_user(request)
-		pu_date = datetime.date.now()
+		pu_date = datetime.datetime.now()
 		pu_time = datetime.datetime.now()
-		do_date = datetime.date.now()
+		do_date = datetime.datetime.now()
 		do_time = datetime.datetime.now()
 
 
@@ -82,7 +80,7 @@ def add_res(request):
 		flash_errors(request, errors)
 		return redirect(reverse('add_res'))
 	else:
-		return render(request, 'reservation/add.html')
+		return render(request, 'rental/add.html')
 
 
 
