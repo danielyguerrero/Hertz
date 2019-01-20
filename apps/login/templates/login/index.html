@@ -34,8 +34,11 @@
             {% endfor %}
         </ul>
         {% endif %}
+        <div class="header">
+            <h1>Welcome to Hertz Car Rental</h1>
+            <button href="{% url 'intranet' %}"> Intranet </button>
+        </div>
 
-        <h1 class="header">Welcome to Hertz Car Rental</h1>
         <form class="regform" action="{% url 'register' %}" method="post">
             {% csrf_token %}
 

@@ -31,6 +31,13 @@ def reserve(request):
     user = current_user(request)
     return render(request, 'reservation/index.html', context)
 
+def intranet(request):
+    context={
+        'user' : current_user(request),
+    }
+    user = current_user(request)
+    return  render(request, 'intranet/index.html', context)
+
 #=====================================================================
 #                        REDIRECT FUNCTIONS
 #=====================================================================

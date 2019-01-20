@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^', include('apps.login.urls')),
     url(r'^rental/', include('apps.rental.urls')),
+    url(r'^intranet/', include('apps.intranet.urls')),
 ]
