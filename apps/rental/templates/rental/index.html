@@ -7,7 +7,6 @@
 		<!-- Bootstrap -->
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
 		<!-- Icon library -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- jQuery library -->
@@ -22,11 +21,9 @@
 
 	<div class="topnav" id="myTopnav">
 		 <a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
-
-		<a href="{% url 'dashboard' %}"> Dashboard </a>
-		
+		<a href="{% url 'locations' %}"> Locations </a>
 		<a href="{% url 'add_res' %}"> Add Reservation </a>
-
+		<a href="{% url 'requirements' %}"> Rental Requirements </a>
 		<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
 
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
@@ -64,8 +61,13 @@
 			</table>
 		</div>
 		<div>
-			<h1>Our Locations</h1>
-			<img src="/static/rental/img/locations.png" height="400" width="600"/ >
+		
+		</div>
+		<div class="footer">
+			<p>this is the footer and the fa-fa icons</p>
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-yelp"></a>
 		</div>
 	</div>
 

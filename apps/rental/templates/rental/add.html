@@ -23,9 +23,8 @@
 		 <a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
 
 		<a href="{% url 'dashboard' %}"> Dashboard </a>
-		
-		<a href="{% url 'add_res' %}"> Add Reservation </a>
-
+		<a href="{% url 'locations' %}"> Locations </a>
+		<a href="{% url 'requirements' %}"> Rental Requirements </a>
 		<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
 
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
@@ -131,15 +130,12 @@
 				
 				<div class="quote">
 					<p>The estimate price for this reservation is: </p>
-					<img src="/static/reservation/img/cartypes.jpg">
+					<img src="/static/rental/img/cartypes.jpg">
 				</div>
 
 			</div>
 			<button>Book This Reservation</button>
 		</form>
-		<p>this is a p</p>
-		<p>this is a p</p>
-		<p>this is a p</p>
 	</div>
 </body>
 </html>

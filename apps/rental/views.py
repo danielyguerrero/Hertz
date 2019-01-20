@@ -52,6 +52,15 @@ def index(request):
 	}
 	return render(request, 'rental/index.html', context)
 
+
+def locations(request):
+
+	return render(request, 'rental/locations.html')
+
+def requirements(request):
+
+	return render(request, 'rental/requirements.html')
+
 # =================================================
 #                       PROCESS
 # =================================================
@@ -89,3 +98,10 @@ def delete(request, res_id):
     Reservation.objects.get(id=res_id).delete()
 
     return redirect('dashboard')
+
+def logout(request):
+	if 'user_id' in request.session:
+		request.session.pop('user_id')
+		
+	return redirect(reverse('landing'))
+
