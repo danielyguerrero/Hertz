@@ -44,6 +44,7 @@
 					<th scope="col">Pickup Time</th>
 					<th scope="col">Dropoff Location</th>
 					<th scope="col">Dropoff Time</th>
+					<th scope="col">Amount Per Day</th>
 					<th scope="col"> Action </th>
 					</tr>
 				</thead>
@@ -55,6 +56,7 @@
 						<td>{{ res.pu_time }}</td>
 						<td>{{ res.do_location }}</td>
 						<td>{{ res.do_time }}</td>
+						<td>${{ res.rate }}.00</td>
 						<td> <a href="{{res.id}}">Edit</a> / <a href="delete/{{res.id}}">Delete</a> </td>
 						</tr>
 					{%endfor%}
@@ -64,7 +66,6 @@
 		<div>
 			<h1>Our Locations</h1>
 			<img src="/static/reservation/img/locations.png" height="400" width="600"/ >
-			<p>Another Par</p>
 		</div>
 	</div>
 

@@ -6,6 +6,7 @@ class ReservationManager(models.Manager):
 	def validate(self, form_data):
 		errors = []
 		vehicle = form_data['vehicle']
+
 		pu_location = form_data['pu_location']
 		pu_time = form_data['pu_time']
 		do_location = form_data['do_location']
@@ -20,6 +21,22 @@ class ReservationManager(models.Manager):
 		return errors	
 
 	def add_res(self, form_data, user_id):
+		if form_data['vehicle'] == "Compact":
+			rate = 15.00
+		if form_data['vehicle'] == "MidSizeSedan":
+			rate = 20.00
+		if form_data['vehicle'] == "FullSizeSedan":
+			rate = 25.00
+		if form_data['vehicle'] == "MidSizeSuv":
+			rate = 30.00
+		if form_data['vehicle'] == "LargeSuv":
+			rate = 40.00
+		if form_data['vehicle'] == "Van":
+			rate = 50.00
+		if form_data['vehicle'] == "PassangerVan":
+			rate = 55.00
+		if form_data['vehicle'] == "PickupTruck":
+			rate = 60.00
 		user = User.objects.get(id=user_id)
 		reservation = self.create(
 		vehicle = form_data['vehicle'],
@@ -27,8 +44,10 @@ class ReservationManager(models.Manager):
 		pu_time = form_data['pu_time'],
 		do_location = form_data['do_location'],
 		do_time = form_data['do_time'],
+		rate = rate,
 		made_by = user
 		)
+		print rate
 		return reservation
 
 class Reservation(models.Model):
@@ -37,6 +56,7 @@ class Reservation(models.Model):
 	pu_time = models.DateTimeField(null=True)
 	do_location = models.CharField(max_length=45)
 	do_time = models.DateTimeField(null=True)
+	rate = models.IntegerField(default=0)
 	made_by = models.ForeignKey(User, related_name="made_by")
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)

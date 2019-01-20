@@ -65,6 +65,9 @@ def add_res(request):
 		user = current_user(request)
 		pu_time = datetime.datetime.now()
 		do_time = datetime.datetime.now()
+
+
+
 		if not errors:
 			context = {
 			'pu_time': pu_time,
