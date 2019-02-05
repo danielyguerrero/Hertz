@@ -1,80 +1,59 @@
 <html>
-
-<head>
-    <title>Hertz Car Rental</title>
-
-    {% load static %}
-
-    <!-- CSS Link -->
-    <link rel="stylesheet" type="text/css" href="{% static 'login/index.css' %}">
-
-     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
-
-
-
-</head>
-
-<body>
-    <div class="wrapper">
-
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        <div class="header">
-            <h1>Welcome to Hertz Car Rental</h1>
-            <a href="{% url 'intranet' %}"> Intranet </a>
+    <head>
+        <title>Hertz Car Rental</title>
+        {% load static %}
+        <!-- CSS Link -->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/index.css' %}">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <div class="header">
+                <h1>Welcome to Hertz Car Rental</h1>
+                <a href="{% url 'intranet' %}"> Intranet </a>
+            </div>
+            <form class="regform" action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                <h3>Register</h3>
+                <p>First Name:</p>
+                <input type="text" name="first_name" />
+                <p>Last name:</p>
+                <input type="text" name="last_name" />
+                <p>Email:</p>
+                <input type="text" name="email" />
+                <p>Password:</p>
+                <input type="password" name="password" />
+                <p>Confirm PW:</p>
+                <input type="password" name="password_confirmation" />
+                <p class="btnpar">
+                    <input type="submit" value="Register" />
+                </p>
+            </form>
+            <form class="logform" action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <h3 class="login">Already have an Account?</h3>
+                <p>Email:</p>
+                <input type="text" name="email" />
+                <p>Password:</p>
+                <input type="password" name="password" />
+                <p class="btnpar">
+                    <input type="submit" value="Login" />
+                </p>
+            </form>
         </div>
-
-        <form class="regform" action="{% url 'register' %}" method="post">
-            {% csrf_token %}
-
-            <h3>Register</h3>
-            <p>First Name:</p>
-            <input type="text" name="first_name" />
-
-            <p>Last name:</p>
-            <input type="text" name="last_name" />
-
-            <p>Email:</p>
-            <input type="text" name="email" />
-
-            <p>Password:</p>
-            <input type="password" name="password" />
-
-            <p>Confirm PW:</p>
-            <input type="password" name="password_confirmation" />
-            <p class="btnpar">
-                <input type="submit" value="Register" />
-            </p>
-        </form>
-
-        <form class="logform" action="{% url 'login' %}" method="post">
-            {% csrf_token %}
-            <h3 class="login">Already have an Account?</h3>
-            <p>Email:</p>
-            <input type="text" name="email" />
-
-            <p>Password:</p>
-            <input type="password" name="password" />
-            <p class="btnpar">
-                <input type="submit" value="Login" />
-            </p>
-        </form>
-    </div>
-</body>
-
+    </body>
 </html>

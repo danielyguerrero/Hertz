@@ -1,13 +1,11 @@
 <html>
-<head>
+	<head>
 		<title>Add a Reservation</title>
-
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{% load staticfiles %}
 		<!-- Bootstrap -->
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
 		<!-- Icon library -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- jQuery library -->
@@ -16,127 +14,116 @@
 		<link rel="stylesheet" href="{% static 'rental/css/add.css' %}" charset="utf-8"  />
 		<!-- jQuery Link -->
 		<script src="{% static "rental/js/add.js" %}"></script>
-
-</head>
-<body>
-	<div class="topnav" id="myTopnav">
-		 <a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
-
-		<a href="{% url 'dashboard' %}"> Dashboard </a>
-		<a href="{% url 'locations' %}"> Locations </a>
-		<a href="{% url 'requirements' %}"> Rental Requirements </a>
-		<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
-
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-
-	</div>
-	<div class="wrapper">		
-		<h2>Let's Create a Reservation</h2>
-		<form class="add_res" method="post">
-	 		{% csrf_token %}
-			<div class="low">
-				<div class="field-wrap">
-					<p>Select Vehicle: </p>
-					<select name="vehicle">
-						<option value="Compact">Compact</option>
-						<option value="MidSizeSedan">Mid-size Sedan</option>
-						<option value="FullSizeSedan" selected>Full-size Sedan</option>
-						<option value="MidSizeSuv">Mid-size SUV</option>
-						<option value="LargeSuv">Large SUV</option>
-						<option value="Van" selected>Van</option>
-						<option value="PassangerVan">Passander Van</option>
-						<option value="PickupTruck">Pickup Truck</option>
-					</select>
-
-					<p>Pickup Location: </p>
-					<select name="pu_location">
-						<option value="Dallas">Dallas</option>
-						<option value="Mesquite">Mesquite</option>
-						<option value="Richardson">Richardson</option>
-						<option value="Garland" selected>Garland</option>
-						<option value="Irving">Irving</option>
-						<option value="Plano">Plano</option>
-						<option value="DFW Airport" selected>DFW Airport</option>
-						<option value="Love-Field Airport">LoveField Airport</option>
-					</select>
-
-					<p>Pickup Date and Time:</p>
-					<input type="date" name="pu_date">
-
-					<select type="time" name="pu_time">
-						<option value="07:30">07:30 AM</option>
-						<option value="08:00">08:00 AM</option>
-						<option value="08:30">08:30 AM</option>
-						<option value="09:00">09:00 AM</option>
-						<option value="09:30">09:30 AM</option>
-						<option value="10:00">10:00 AM</option>
-						<option value="10:30">10:30 AM</option>
-						<option value="11:00">11:00 AM</option>
-						<option value="11:30">11:30 AM</option>
-						<option value="12:00">12:00 Noon</option>
-						<option value="12:30">12:30 PM</option>
-						<option value="13:00">01:00 PM</option>
-						<option value="13:30">01:30 PM</option>
-						<option value="14:00">02:00 PM</option>
-						<option value="14:30">02:30 PM</option>
-						<option value="15:00">03:00 PM</option>
-						<option value="15:30">03:30 PM</option>
-						<option value="16:00">04:00 PM</option>
-						<option value="16:30">04:30 PM</option>
-						<option value="17:00">05:00 PM</option>
-						<option value="17:30">05:30 PM</option>
-						<option value="18:00">06:00 PM</option>
-					</select>
-
-					<p>Dropoff Location: </p>
-					<select name="do_location">
-						<option value="Dallas">Dallas</option>
-						<option value="Mesquite">Mesquite</option>
-						<option value="Richardson">Richardson</option>
-						<option value="Garland" selected>Garland</option>
-						<option value="Irving">Irving</option>
-						<option value="Plano">Plano</option>
-						<option value="DFW Airport" selected>DFW Airport</option>
-						<option value="Love-Field Airport">Love-Field Airport</option>
-					</select>
-
-					<p>Dropoff Date and Time:</p>
-					<input type="date" name="do_date">
-					<select type="time" name="do_time">
-						<option value="07:30">07:30 AM</option>
-						<option value="08:00">08:00 AM</option>
-						<option value="08:30">08:30 AM</option>
-						<option value="09:00">09:00 AM</option>
-						<option value="09:30">09:30 AM</option>
-						<option value="10:00">10:00 AM</option>
-						<option value="10:30">10:30 AM</option>
-						<option value="11:00">11:00 AM</option>
-						<option value="11:30">11:30 AM</option>
-						<option value="12:00">12:00 Noon</option>
-						<option value="12:30">12:30 PM</option>
-						<option value="13:00">01:00 PM</option>
-						<option value="13:30">01:30 PM</option>
-						<option value="14:00">02:00 PM</option>
-						<option value="14:30">02:30 PM</option>
-						<option value="15:00">03:00 PM</option>
-						<option value="15:30">03:30 PM</option>
-						<option value="16:00">04:00 PM</option>
-						<option value="16:30">04:30 PM</option>
-						<option value="17:00">05:00 PM</option>
-						<option value="17:30">05:30 PM</option>
-						<option value="18:00">06:00 PM</option>
-					</select>
+	</head>
+	<body>
+		<div class="topnav" id="myTopnav">
+			<a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
+			<a href="{% url 'dashboard' %}"> Dashboard </a>
+			<a href="{% url 'locations' %}"> Locations </a>
+			<a href="{% url 'requirements' %}"> Rental Requirements </a>
+			<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
+		<div class="wrapper">
+			<h2>Let's Create a Reservation</h2>
+			<form class="add_res" method="post">
+				{% csrf_token %}
+				<div class="low">
+					<div class="field-wrap">
+						<p>Select Vehicle: </p>
+						<select name="vehicle">
+							<option value="Compact">Compact</option>
+							<option value="MidSizeSedan">Mid-size Sedan</option>
+							<option value="FullSizeSedan" selected>Full-size Sedan</option>
+							<option value="MidSizeSuv">Mid-size SUV</option>
+							<option value="LargeSuv">Large SUV</option>
+							<option value="Van" selected>Van</option>
+							<option value="PassangerVan">Passander Van</option>
+							<option value="PickupTruck">Pickup Truck</option>
+						</select>
+						<p>Pickup Location: </p>
+						<select name="pu_location">
+							<option value="Dallas">Dallas</option>
+							<option value="Mesquite">Mesquite</option>
+							<option value="Richardson">Richardson</option>
+							<option value="Garland" selected>Garland</option>
+							<option value="Irving">Irving</option>
+							<option value="Plano">Plano</option>
+							<option value="DFW Airport" selected>DFW Airport</option>
+							<option value="Love-Field Airport">LoveField Airport</option>
+						</select>
+						<p>Pickup Date and Time:</p>
+						<input type="date" name="pu_date">
+						<select type="time" name="pu_time">
+							<option value="07:30">07:30 AM</option>
+							<option value="08:00">08:00 AM</option>
+							<option value="08:30">08:30 AM</option>
+							<option value="09:00">09:00 AM</option>
+							<option value="09:30">09:30 AM</option>
+							<option value="10:00">10:00 AM</option>
+							<option value="10:30">10:30 AM</option>
+							<option value="11:00">11:00 AM</option>
+							<option value="11:30">11:30 AM</option>
+							<option value="12:00">12:00 Noon</option>
+							<option value="12:30">12:30 PM</option>
+							<option value="13:00">01:00 PM</option>
+							<option value="13:30">01:30 PM</option>
+							<option value="14:00">02:00 PM</option>
+							<option value="14:30">02:30 PM</option>
+							<option value="15:00">03:00 PM</option>
+							<option value="15:30">03:30 PM</option>
+							<option value="16:00">04:00 PM</option>
+							<option value="16:30">04:30 PM</option>
+							<option value="17:00">05:00 PM</option>
+							<option value="17:30">05:30 PM</option>
+							<option value="18:00">06:00 PM</option>
+						</select>
+						<p>Dropoff Location: </p>
+						<select name="do_location">
+							<option value="Dallas">Dallas</option>
+							<option value="Mesquite">Mesquite</option>
+							<option value="Richardson">Richardson</option>
+							<option value="Garland" selected>Garland</option>
+							<option value="Irving">Irving</option>
+							<option value="Plano">Plano</option>
+							<option value="DFW Airport" selected>DFW Airport</option>
+							<option value="Love-Field Airport">Love-Field Airport</option>
+						</select>
+						<p>Dropoff Date and Time:</p>
+						<input type="date" name="do_date">
+						<select type="time" name="do_time">
+							<option value="07:30">07:30 AM</option>
+							<option value="08:00">08:00 AM</option>
+							<option value="08:30">08:30 AM</option>
+							<option value="09:00">09:00 AM</option>
+							<option value="09:30">09:30 AM</option>
+							<option value="10:00">10:00 AM</option>
+							<option value="10:30">10:30 AM</option>
+							<option value="11:00">11:00 AM</option>
+							<option value="11:30">11:30 AM</option>
+							<option value="12:00">12:00 Noon</option>
+							<option value="12:30">12:30 PM</option>
+							<option value="13:00">01:00 PM</option>
+							<option value="13:30">01:30 PM</option>
+							<option value="14:00">02:00 PM</option>
+							<option value="14:30">02:30 PM</option>
+							<option value="15:00">03:00 PM</option>
+							<option value="15:30">03:30 PM</option>
+							<option value="16:00">04:00 PM</option>
+							<option value="16:30">04:30 PM</option>
+							<option value="17:00">05:00 PM</option>
+							<option value="17:30">05:30 PM</option>
+							<option value="18:00">06:00 PM</option>
+						</select>
+					</div>
+					
+					<div class="quote">
+						<p>The estimate price for this reservation is: </p>
+						<img src="/static/rental/img/cartypes.jpg">
+					</div>
 				</div>
-				
-				<div class="quote">
-					<p>The estimate price for this reservation is: </p>
-					<img src="/static/rental/img/cartypes.jpg">
-				</div>
-
-			</div>
-			<button>Book This Reservation</button>
-		</form>
-	</div>
-</body>
+				<button>Book This Reservation</button>
+			</form>
+		</div>
+	</body>
 </html>
-

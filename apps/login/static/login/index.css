@@ -1,56 +1,54 @@
 .wrapper{
-	background: url("images/hertz.jpg") no-repeat;
-	background-size: cover;                      
-    background-position: center center;       
-	height: 100%;
-	width: auto;
-	text-align: center;
+background: url("images/hertz.jpg") no-repeat;
+background-size: cover;
+background-position: center center;
+height: 100%;
+width: auto;
+text-align: center;
 }
 .header{
-	color: white;
-	font-style: italic;
+color: white;
+font-style: italic;
 }
 h1{
-	display: inline-block;
+display: inline-block;
 }
 a{
-	float: right;
-	background-color: #5a5a62;
-	height: 50px;
-	width: 84px;
-	font-color: white;
-	color: white;
+float: right;
+background-color: #5a5a62;
+height: 50px;
+width: 84px;
+font-color: white;
+color: white;
 }
 .regform{
-	height: auto;
-	width: 400px;
-	background-color: #fff30099;
-	display: inline-block;
-	opacity: 0.8;
-	text-align: center;
-	border-radius: 29px;
+height: auto;
+width: 400px;
+background-color: #fff30099;
+display: inline-block;
+opacity: 0.8;
+text-align: center;
+border-radius: 29px;
 }
-
 .regform p{
-	margin: 5px;
-	font-size: 20px;
+margin: 5px;
+font-size: 20px;
 }
 .login{
-	color: red;
-	font-size: 18px;
+color: red;
+font-size: 18px;
 }
 .logform{
-	height: auto;
-	width: 400px;
-	background-color: #fff30099;
-	display: inline-block;
-	vertical-align: top;
-	opacity: 0.8;
-	text-align: center;
-	border-radius: 29px;
+height: auto;
+width: 400px;
+background-color: #fff30099;
+display: inline-block;
+vertical-align: top;
+opacity: 0.8;
+text-align: center;
+border-radius: 29px;
 }
-
 .logform p{
-	margin: 5px;
-	font-size: 20px;
+margin: 5px;
+font-size: 20px;
 }

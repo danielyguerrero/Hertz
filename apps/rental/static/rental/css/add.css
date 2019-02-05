@@ -14,18 +14,16 @@ margin-right: auto;
 margin-left: auto;
 background-color: white;
 }
-table, td, th {  
-  border: 1px solid #ddd;
-  text-align: left;
+table, td, th {
+border: 1px solid #ddd;
+text-align: left;
 }
-
 table {
-  border-collapse: collapse;
-  width: 100%;
+border-collapse: collapse;
+width: 100%;
 }
-
 th, td {
-  padding: 15px;
+padding: 15px;
 }
 .reslist{
 border: solid 2px;
@@ -83,12 +81,11 @@ text-align: left;
 }
 }
 /*==================================================================================*/
-
 .quote{
-	min-height: 300px;
-	min-width: 400px;
-	display: inline-block;
-	vertical-align: top;
-	border: 2px solid black;
-	padding: 10px;
+min-height: 300px;
+min-width: 400px;
+display: inline-block;
+vertical-align: top;
+border: 2px solid black;
+padding: 10px;
 }

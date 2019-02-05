@@ -1,12 +1,11 @@
 <html>
-<head>
-	<title>Locations</title>
+	<head>
+		<title>Locations</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{% load staticfiles %}
 		<!-- Bootstrap -->
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
 		<!-- Icon library -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- jQuery library -->
@@ -15,26 +14,22 @@
 		<link rel="stylesheet" href="{% static 'rental/css/locations.css' %}" charset="utf-8"  />
 		<!-- jQuery Link -->
 		<script src="{% static "rental/js/locations.js" %}"></script>
-
-</head>
-<body>
-<div class="topnav" id="myTopnav">
-	 <a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
-
-	<a href="{% url 'dashboard' %}"> Dashboard </a>
-	<a href="{% url 'add_res' %}"> Add Reservation </a>
-	<a href="{% url 'requirements' %}"> Rental Requirements </a>
-	<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
-
-	<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-
-</div>
-<div class="wrapper">
-	<h1>Our Locations</h1>
-	<img src="/static/rental/img/locations.png" height="400" width="600"/ >
-	<h3>You may return your vehicle at any of our locations.</h3>
-	<p>If you are returning a vehicle which you were not quoted with there will be approximate $20.00 intercity fee.</p>
-	<p>Note: Not all locations have a drop-off box so ensure to plan accordingly. If you leave our vehicle in a location that has no drop-off with the keys outside or in the vehicle you will be charged until it is checked back in and you are resposible for any damages since it is still in your custody. </p>
-</div>
-</body>
+	</head>
+	<body>
+		<div class="topnav" id="myTopnav">
+			<a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
+			<a href="{% url 'dashboard' %}"> Dashboard </a>
+			<a href="{% url 'add_res' %}"> Add Reservation </a>
+			<a href="{% url 'requirements' %}"> Rental Requirements </a>
+			<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
+		<div class="wrapper">
+			<h1>Our Locations</h1>
+			<img src="/static/rental/img/locations.png" height="400" width="600"/ >
+			<h3>You may return your vehicle at any of our locations.</h3>
+			<p>If you are returning a vehicle which you were not quoted with there will be approximate $20.00 intercity fee.</p>
+			<p>Note: Not all locations have a drop-off box so ensure to plan accordingly. If you leave our vehicle in a location that has no drop-off with the keys outside or in the vehicle you will be charged until it is checked back in and you are resposible for any damages since it is still in your custody. </p>
+		</div>
+	</body>
 </html>

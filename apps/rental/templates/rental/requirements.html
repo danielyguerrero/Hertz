@@ -1,6 +1,6 @@
 <html>
-<head>
-	<title>Rental Requirements</title>
+	<head>
+		<title>Rental Requirements</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		{% load staticfiles %}
 		<!-- Bootstrap -->
@@ -14,35 +14,29 @@
 		<link rel="stylesheet" href="{% static 'rental/css/requirements.css' %}" charset="utf-8"  />
 		<!-- jQuery Link -->
 		<script src="{% static "rental/js/requirements.js" %}"></script>
-</head>
-<body>
-<div class="topnav" id="myTopnav">
-	 <a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
-
-	<a href="{% url 'dashboard' %}"> Dashboard </a>
-	<a href="{% url 'locations' %}"> Our Locations </a>
-	<a href="{% url 'add_res' %}"> Add Reservation </a>
-
-	<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
-
-	<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-
-</div>
-<div class="wrapper">
-	<h1>These are the requirements:</h1>
-	<h4>Renter must provide a valid drivers license</h4>
-	<p>The License may be from any state or even an international license Note: must not be expired.</p>
-	<p>A $200.00 deposit will be held at the time of rental along with the quoted price.</p>
-	<p>The renter must present a Debit Card or Credit Card in their name at the time of rental we do not take pre-paid cards, cash, or checks. If the renter is presenting a debit card a credit check will be made. If using a Credit Card no credit report is nessasary.</p>
-	<i class="fa fa-cc-visa"></i>
-	<i class="fa fa-cc-mastercard"></i>
-	<i class="fa fa-cc-amex"></i>
-	<i class="fa fa-cc-diners-club"></i>
-
-	<h2>Avoid Being Charged</h2>
-
-	<p>Absolutely no smoking in any of our vehicles as this causes us to pull the vehicle from our fleet and detail it. There is a $300.00 penalty if done.</p>
-	<p>We allow our renters to travel with their pets, however, if your pet (including service animals) leave excesive hair in our vehicle please ensure to clean up after them. There is a $300.00 charge for excessive pet hair. </p>
-</div>
-</body>
+	</head>
+	<body>
+		<div class="topnav" id="myTopnav">
+			<a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
+			<a href="{% url 'dashboard' %}"> Dashboard </a>
+			<a href="{% url 'locations' %}"> Our Locations </a>
+			<a href="{% url 'add_res' %}"> Add Reservation </a>
+			<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
+		<div class="wrapper">
+			<h1>These are the requirements:</h1>
+			<h4>Renter must provide a valid drivers license</h4>
+			<p>The License may be from any state or even an international license Note: must not be expired.</p>
+			<p>A $200.00 deposit will be held at the time of rental along with the quoted price.</p>
+			<p>The renter must present a Debit Card or Credit Card in their name at the time of rental we do not take pre-paid cards, cash, or checks. If the renter is presenting a debit card a credit check will be made. If using a Credit Card no credit report is nessasary.</p>
+			<i class="fa fa-cc-visa"></i>
+			<i class="fa fa-cc-mastercard"></i>
+			<i class="fa fa-cc-amex"></i>
+			<i class="fa fa-cc-diners-club"></i>
+			<h2>Avoid Being Charged</h2>
+			<p>Absolutely no smoking in any of our vehicles as this causes us to pull the vehicle from our fleet and detail it. There is a $300.00 penalty if done.</p>
+			<p>We allow our renters to travel with their pets, however, if your pet (including service animals) leave excesive hair in our vehicle please ensure to clean up after them. There is a $300.00 charge for excessive pet hair. </p>
+		</div>
+	</body>
 </html>
