@@ -13,8 +13,13 @@
 h1{
 	display: inline-block;
 }
-button{
+a{
 	float: right;
+	background-color: #5a5a62;
+	height: 50px;
+	width: 84px;
+	font-color: white;
+	color: white;
 }
 .regform{
 	height: auto;

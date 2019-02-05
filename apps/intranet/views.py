@@ -1,4 +1,3 @@
-from __future__ import unicode_literals
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from ..login.models import User
@@ -28,15 +27,5 @@ def user(request, id):
 
 def index(request):
 
-	if user_id not in request.session:
-		return	redirect('/')
-
-	user = current_user(request)
-
-	context = {
-		'user':user,
-
-	}
-
-	return render(request, 'intranet/index.html', context)
+	return render(request, 'intranet/index.html')
 

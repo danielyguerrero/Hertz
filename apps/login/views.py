@@ -31,13 +31,6 @@ def reserve(request):
     user = current_user(request)
     return render(request, 'reservation/index.html', context)
 
-def intranet(request):
-    context={
-        'user' : current_user(request),
-    }
-    user = current_user(request)
-    return  render(request, 'intranet/index.html', context)
-
 #=====================================================================
 #                        REDIRECT FUNCTIONS
 #=====================================================================
@@ -52,6 +45,9 @@ def register(request):
 
         flash_errors(errors, request)
     return redirect(reverse('landing'))
+
+def intranet(request):
+    return  redirect(reverse('intranet'))
 
 def login(request):
     if request.method == "POST":
