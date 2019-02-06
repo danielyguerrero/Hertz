@@ -1,38 +1,48 @@
 .wrapper{
-	background-color: #17568c;
-	height: 100%;
-	width: auto;
-	background: url("images/desk.jpeg") no-repeat;
-	text-align: center;
+background-color: #17568c;
+height: 100%;
+width: auto;
+background: url("images/desk.jpeg") no-repeat;
+background-size: cover;
+text-align: center;
 }
 h1{
-	background-color: blue;
-	color: white !important;
+background-color: blue;
+color: white !important;
 }
-
 .employee_login{
-	background-color: #f0f0f0;
-	height: 300px;
-	width: 250px;
-	padding: 10px;
-	border-radius: 5px;
-	display: inline-block;
-	margin: 30px;
-	
+background-color: #f0f0f0;
+height: 300px;
+width: 250px;
+padding: 10px;
+border-radius: 5px;
+display: inline-block;
+margin: 30px;
+
 }
 .admin_login{
-	height: 300px;
-	width: 250px;
-	background-color: #f0f0f0;
-	padding: 10px;
-	border-radius: 5px;
-	display: inline-block;
-	vertical-align: top;
-	margin:30px;
-	
+height: 300px;
+width: 250px;
+background-color: #f0f0f0;
+padding: 10px;
+border-radius: 5px;
+display: inline-block;
+vertical-align: top;
+margin:30px;
+
 }
 button{
-	margin: 5px 0px 0px 0px !important;
-	background-color: #2384d3;
-	color: white;
+margin: 5px 0px 0px 0px !important;
+background-color: #2384d3;
+color: white;
+}
+.footer{
+margin-top: 86px;
+background: #8896d7;
+opacity: .9;
+min-height: 110px;
+font-size: 20px
+}
+.footer i{
+	margin:40px;
 }

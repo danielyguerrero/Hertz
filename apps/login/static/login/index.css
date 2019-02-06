@@ -13,8 +13,18 @@ font-style: italic;
 h1{
 display: inline-block;
 }
-a{
+.button{
+background-color: #4CAF50; /* Green */
+border: none;
+color: white;
+padding: 5px;
+text-align: center;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
 float: right;
+}
+a{
 background-color: #5a5a62;
 height: 50px;
 width: 84px;

@@ -24,7 +24,7 @@
             {% endif %}
             <div class="header">
                 <h1>Welcome to Hertz Car Rental</h1>
-                <a href="{% url 'intranet' %}"> Intranet </a>
+                <a href="{% url 'intranet' %}" class="button"> Intranet </a>
             </div>
             <form class="regform" action="{% url 'register' %}" method="post">
                 {% csrf_token %}
