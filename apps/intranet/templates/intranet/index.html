@@ -24,8 +24,6 @@
 				<input type="text" name="password">
 				<button type="submit">Login</button>
 			</form>
-		<br>
-		<br>
 			<form class="admin_login" action='{% url "a_login" %}' method="post">
 				<p>Supervisor Login</p>
 				{% csrf_token %}
@@ -35,6 +33,11 @@
 				<input type="text" name="password">
 				<button type="submit">Submit</button>
 			</form>
+			<div class="footer">
+				<p>Need Help?</p>
+				<p>Contact Helpdesk </p>
+				
+			</div>
 		</div>
 	</body>
 </html>

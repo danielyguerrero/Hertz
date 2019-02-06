@@ -2,14 +2,13 @@
 	background-color: #17568c;
 	height: 100%;
 	width: auto;
-	text-align: center;
 	background: url("images/desk.jpeg") no-repeat;
+	text-align: center;
 }
 h1{
 	background-color: blue;
 	color: white !important;
 }
-
 
 .employee_login{
 	background-color: #f0f0f0;
@@ -17,6 +16,9 @@ h1{
 	width: 250px;
 	padding: 10px;
 	border-radius: 5px;
+	display: inline-block;
+	margin: 30px;
+	
 }
 .admin_login{
 	height: 300px;
@@ -24,6 +26,10 @@ h1{
 	background-color: #f0f0f0;
 	padding: 10px;
 	border-radius: 5px;
+	display: inline-block;
+	vertical-align: top;
+	margin:30px;
+	
 }
 button{
 	margin: 5px 0px 0px 0px !important;
