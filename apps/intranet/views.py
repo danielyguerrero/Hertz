@@ -29,3 +29,10 @@ def index(request):
 
 	return render(request, 'intranet/index.html')
 
+def emp_login(request):
+
+	return render(request, 'intranet/landing.html')
+
+def admin_login(request):
+
+	return render(request, 'intranet/admin.html')

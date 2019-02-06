@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Administration Page</title>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Create an Employee</h1>
+		<form class="create_emp" action='{% url "create_employee" %}' method="post">
+			{% csrf_token %}
+			<p>Create Employee ID:</p>
+			<input type="text" name="employee_id">
+			<p>Create Employee Pass:</p>
+			<input type="text" name="password">
+			<button class="submit">Submit</button>
+		</form>
+
+	</div>
+</body>
+</html>

@@ -1,7 +1,32 @@
+.wrapper{
+	background-color: #17568c;
+	height: 100%;
+	width: auto;
+	text-align: center;
+	background: url("images/desk.jpeg") no-repeat;
+}
 h1{
 	background-color: blue;
-	color: white !important;;
+	color: white !important;
 }
-p{
-	font-size: 35px;
+
+
+.employee_login{
+	background-color: #f0f0f0;
+	height: 300px;
+	width: 250px;
+	padding: 10px;
+	border-radius: 5px;
+}
+.admin_login{
+	height: 300px;
+	width: 250px;
+	background-color: #f0f0f0;
+	padding: 10px;
+	border-radius: 5px;
+}
+button{
+	margin: 5px 0px 0px 0px !important;
+	background-color: #2384d3;
+	color: white;
 }
