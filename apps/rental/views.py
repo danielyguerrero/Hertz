@@ -56,7 +56,12 @@ def index(request):
 def locations(request):
 
 	return render(request, 'rental/locations.html')
-
+def add(request):
+	user = current_user(request)
+	context = {
+		'user': user,
+	}
+	return render(request, 'rental/add.html', context)
 def requirements(request):
 	user = current_user(request)
 	context = {
@@ -69,22 +74,19 @@ def requirements(request):
 # =================================================
 def add_res(request):
 	if request.method == "POST":
-		errors = Reservation.objects.validate(request.POST)
 		user = current_user(request)
+		errors = Reservation.objects.validate(request.POST)
 		pu_date = datetime.datetime.now()
 		pu_time = datetime.datetime.now()
 		do_date = datetime.datetime.now()
 		do_time = datetime.datetime.now()
-
-
-
 		if not errors:
 			context = {
+			'user': user,
 			'pu_date': pu_date,
 			'pu_time': pu_time,
 			'do_date': do_date,
 			'do_time': do_time,
-
 			}
 			reservation = Reservation.objects.add_res(request.POST, request.session["user_id"])
 			return redirect(reverse('dashboard'))

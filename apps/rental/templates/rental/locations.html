@@ -19,6 +19,7 @@
 		<div class="topnav" id="myTopnav">
 			<a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
 			<a href="{% url 'dashboard' %}"> Dashboard </a>
+			<a href="{% url 'locations' %}"> Locations </a>
 			<a href="{% url 'add_res' %}"> Add Reservation </a>
 			<a href="{% url 'requirements' %}"> Rental Requirements </a>
 			<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
@@ -30,6 +31,15 @@
 			<h3>You may return your vehicle at any of our locations.</h3>
 			<p>If you are returning a vehicle which you were not quoted with there will be approximate $20.00 intercity fee.</p>
 			<p>Note: Not all locations have a drop-off box so ensure to plan accordingly. If you leave our vehicle in a location that has no drop-off with the keys outside or in the vehicle you will be charged until it is checked back in and you are resposible for any damages since it is still in your custody. </p>
+			<div class="footer">
+				<a href="#" class="fa fa-facebook"></a>
+				<a href="#" class="fa fa-twitter"></a>
+				<i class="fa fa-yelp"></i>
+				<i class="fa fa-google-plus"></i>
+				<i class="fa fa-pinterest-p"></i>
+				<i class="fa fa-twitter"></i>
+			</div>
 		</div>
-	</body>
+	</div>
+</body>
 </html>

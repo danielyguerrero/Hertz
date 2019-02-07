@@ -20,6 +20,7 @@
 			<a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
 			<a href="{% url 'dashboard' %}"> Dashboard </a>
 			<a href="{% url 'locations' %}"> Locations </a>
+			<a href="{% url 'add_res' %}"> Add Reservation </a>
 			<a href="{% url 'requirements' %}"> Rental Requirements </a>
 			<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
 			<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
@@ -124,6 +125,14 @@
 				</div>
 				<button>Book This Reservation</button>
 			</form>
+			<div class="footer">
+				<a href="#" class="fa fa-facebook"></a>
+				<a href="#" class="fa fa-twitter"></a>
+				<i class="fa fa-yelp"></i>
+				<i class="fa fa-google-plus"></i>
+				<i class="fa fa-pinterest-p"></i>
+				<i class="fa fa-twitter"></i>
+			</div>
 		</div>
 	</body>
 </html>
