@@ -58,8 +58,11 @@ def locations(request):
 	return render(request, 'rental/locations.html')
 
 def requirements(request):
-
-	return render(request, 'rental/requirements.html')
+	user = current_user(request)
+	context = {
+		'user': user,
+	}
+	return render(request, 'rental/requirements.html', context)
 
 # =================================================
 #                       PROCESS
