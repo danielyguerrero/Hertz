@@ -16,56 +16,57 @@
 		<script src="{% static "rental/js/index.js" %}"></script>
 	</head>
 	<body>
-		<div class="topnav" id="myTopnav">
-			<a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
-			<a href="{% url 'dashboard' %}"> Dashboard </a>
-			<a href="{% url 'locations' %}"> Locations </a>
-			<a href="{% url 'add_res' %}"> Add Reservation </a>
-			<a href="{% url 'requirements' %}"> Rental Requirements </a>
-			<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
-			<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-		</div>
 		<div class="wrapper">
-			<h1>Welome, {{user.first_name}}</h1>
-			<h3>Today is {{ today|date:"M d, Y" }} your Reservations are: </h3>
-			<div class="reslist">
-				<table class="table">
-					<thead class="thead-dark">
-						<tr>
-							<th scope="col">Pickup Location</th>
-							<th scope="col">Vehicle Class</th>
-							<th scope="col">Pickup Date</th>
-							<th scope="col">Dropoff Location</th>
-							<th scope="col">Dropoff Date</th>
-							<th scope="col">Amount Per Day</th>
-							<th scope="col"> Action </th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for res in future_res %}
+			<div class="topnav" id="myTopnav">
+				<a class="navbar-brand" class="active"><h3 class="navbar-brand" class="active">Welcome, {{ user.first_name }}!</h3></a>
+				<a href="{% url 'dashboard' %}"> Dashboard </a>
+				<a href="{% url 'locations' %}"> Locations </a>
+				<a href="{% url 'add_res' %}"> Add Reservation </a>
+				<a href="{% url 'requirements' %}"> Rental Requirements </a>
+				<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+			</div>
+			<div class="wrapper">
+				<h1>Welome, {{user.first_name}}</h1>
+				<h3>Today is {{ today|date:"M d, Y" }} your Reservations are: </h3>
+				<div class="reslist">
+					<table class="table">
+						<thead class="thead-dark">
 							<tr>
-								<td>{{ res.pu_location }}</td>
-								<td>{{ res.vehicle }}</td>
-								<td>{{ res.pu_date|date:"M d, Y" }} @ {{res.pu_time}}</td>
-								<td>{{ res.do_location }}</td>
-								<td>{{ res.do_date|date:"M d, Y" }} @ {{res.do_time}}</td>
-								<td>${{ res.rate }}.00</td>
-								<td> <a href="{{res.id}}">Edit</a> / <a href="delete/{{res.id}}">Delete</a> </td>
+								<th scope="col">Pickup Location</th>
+								<th scope="col">Vehicle Class</th>
+								<th scope="col">Pickup Date</th>
+								<th scope="col">Dropoff Location</th>
+								<th scope="col">Dropoff Date</th>
+								<th scope="col">Amount Per Day</th>
+								<th scope="col"> Action </th>
 							</tr>
-							{%endfor%}
-						</tbody>
-					</table>
-				</div>
-				<div>
-					
-				</div>
-				<div class="footer">
-					<a href="#" class="fa fa-facebook"></a>
-					<a href="#" class="fa fa-twitter"></a>
-					<i class="fa fa-yelp"></i>
-					<i class="fa fa-google-plus"></i>
-					<i class="fa fa-pinterest-p"></i>
-					<i class="fa fa-twitter"></i>
+						</thead>
+						<tbody>
+							{% for res in future_res %}
+								<tr>
+									<td>{{ res.pu_location }}</td>
+									<td>{{ res.vehicle }}</td>
+									<td>{{ res.pu_date|date:"M d, Y" }} @ {{res.pu_time}}</td>
+									<td>{{ res.do_location }}</td>
+									<td>{{ res.do_date|date:"M d, Y" }} @ {{res.do_time}}</td>
+									<td>${{ res.rate }}.00</td>
+									<td> <a href="{{res.id}}">Edit</a> / <a href="delete/{{res.id}}">Delete</a> </td>
+								</tr>
+								{%endfor%}
+							</tbody>
+						</table>
+					</div>
+					<div>
+						
+					</div>
+					<div class="footer">
+						<a href="#" class="fa fa-facebook"></a>
+						<a href="#" class="fa fa-twitter"></a>
+						<i class="fa fa-yelp"></i>
+						<i class="fa fa-google-plus"></i>
+						<i class="fa fa-pinterest-p"></i>
+					</div>
 				</div>
 			</div>
 		</body>
